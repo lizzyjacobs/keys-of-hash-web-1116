@@ -1,9 +1,11 @@
 class Hash
   def keys_of(*arguments)
-    collect do |key, value|
+    new_array = []
+    each do |key, value|
       if arguments.include?(value)
-        return key
+        new_array << key
       end
     end
+    new_array
   end
 end
